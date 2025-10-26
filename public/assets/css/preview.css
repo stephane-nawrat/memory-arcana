@@ -1,0 +1,101 @@
+/* ===== preview.css ===== */
+
+/* Section full-width - POSITION FIXE */
+.preview-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: rgba(255, 251, 0, 0.2);
+  margin-top: -3.8rem; /* Ajuste selon tes besoins */
+  padding: 2rem 1rem; /* Espace autour */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-board {
+  display: grid;
+  gap: 8px;
+  transition: all 0.4s ease;
+  /* Plus de position absolute ! */
+}
+
+/* Cartes avec largeur fixe */
+.preview-card {
+  width: 110px;
+  aspect-ratio: 293 / 567;
+  border: none;
+  border-radius: 8px;
+  opacity: 0;
+  animation: cardAppear 0.3s ease forwards;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation d'apparition */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Délai progressif pour effet cascade */
+.preview-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.preview-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.preview-card:nth-child(3) {
+  animation-delay: 0.11s;
+}
+.preview-card:nth-child(4) {
+  animation-delay: 0.14s;
+}
+.preview-card:nth-child(5) {
+  animation-delay: 0.17s;
+}
+.preview-card:nth-child(6) {
+  animation-delay: 0.2s;
+}
+.preview-card:nth-child(7) {
+  animation-delay: 0.23s;
+}
+.preview-card:nth-child(8) {
+  animation-delay: 0.26s;
+}
+
+/* Responsive - Tablettes */
+@media (max-width: 768px) {
+  .preview-section {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .preview-board {
+    gap: 6px;
+  }
+
+  .preview-card {
+    width: 80px;
+    border-radius: 6px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .preview-section {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .preview-board {
+    gap: 4px;
+  }
+
+  .preview-card {
+    width: 70px;
+    border-radius: 4px;
+  }
+}
