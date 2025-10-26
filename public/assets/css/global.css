@@ -1,0 +1,167 @@
+/* ===== global.css ===== */
+
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- VARIABLES --- */
+:root {
+  --font-main: "Menlo", "Monaco", "Courier New", monospace;
+  --max-width: 700px;
+  --space-top: 1rem;
+}
+
+/* --- BASE --- */
+body {
+  font-family: var(--font-main);
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  padding-top: var(--space-top);
+  overflow-x: hidden;
+}
+
+main {
+  max-width: var(--max-width);
+  width: 100%;
+  text-align: center;
+}
+
+/*AMBIANCE PAGE (labyrinthe) */
+.page {
+  background-color: #000000;
+  color: #ffffff;
+  background-image: url(../../assets/images/bg/labyrinth.jpg);
+  background-size: 1280px auto;
+  background-position: left;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+/* Calque d’opacité (10 % blanc → fond très sombre) */
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+}
+
+/* --- PAGE INTRO -> TU VEUX JOUER ? --- */
+.intro .question,
+.intro .quote,
+.intro .farewell {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
+  background: #000000;
+  color: #ffffff;
+  margin: 2rem 0 2rem 0;
+}
+
+/* BOUTONS INTRO (actions + btn) */
+.intro .actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.intro .btn {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: #ffffff;
+  color: #000000;
+  border: 7px solid #000000;
+  transition: all 0.3s;
+  min-width: 100px;
+  padding: 0.75rem 2rem;
+}
+
+.intro .btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* --- PAGE INDEX -> QUEL EST TON NOM --- */
+.index .question {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
+  background: #000000;
+  color: #ffffff;
+  margin: 2rem 0 2rem 0;
+}
+
+/* FORMULAIRE + BOUTONS INDEX (actions + btn) */
+/* --- COMPOSANTS (.btn, .button) --- */
+
+.index .form-name {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  background: #ffffff;
+  color: #000000;
+  border: 7px solid #000000;
+  text-decoration: none;
+
+  transition: all 0.3s;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+  max-height: 60px;
+}
+
+.index .form-name::placeholder {
+  color: blue;
+  font-style: italic;
+}
+
+.index .form-name:hover {
+  background: #000000;
+  color: yellow;
+}
+
+.form-name:hover::placeholder {
+  color: yellow; /* jaune au survol */
+}
+
+.index .btn-start {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  background: #000000;
+  color: #ffffff;
+  border: 7px solid #000000;
+  cursor: pointer;
+}
+
+.index .btn-start:hover {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: 7px solid #000000;
+}
+
+/* --- PAGE INDEX -> 4 CARTES ALIGNÉES --- */
+.index .card-preview {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espacement entre les cartes */
+}
+
+.index .card-preview img {
+  width: 300px; /* Même taille que les cartes du jeu */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- RESPONSIVE DE BASE --- */
