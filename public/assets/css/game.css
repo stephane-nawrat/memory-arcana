@@ -1,0 +1,245 @@
+/* ===== game.css ===== */
+
+/* Nom du joueur */
+.player-name {
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 700;
+  background: #000000;
+  color: #ffffff;
+  margin: 2rem 0 2rem 0;
+  text-align: center;
+}
+
+/* Nom du joueur en jaune */
+.player-highlight {
+  color: yellow;
+}
+
+/* Header : 3 COLONNES */
+.game-header {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Chaque colonne */
+.game-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Pas d'espace entre les items */
+  width: 100%;
+}
+
+/* Items individuels (Paires, Mode, Coups, Temps) */
+.game-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: black;
+  padding: 0.5rem 1.5rem;
+  border: 7px solid #000000;
+  min-width: 150px;
+  height: 55px;
+  justify-content: center;
+}
+
+/* Valeurs */
+.item-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: blue;
+}
+
+#timer {
+  color: red;
+}
+
+#moves {
+  color: green;
+}
+
+/* Labels */
+.item-label {
+  font-size: 0.85rem;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+/* Boutons dans la 3ème colonne */
+.btn-game {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  background: #000000;
+  color: #626262;
+  border: 7px solid #000000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 55px; /* MÊME HAUTEUR que les items */
+}
+
+.btn-game:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Message de victoire */
+.victory-banner {
+  background: #000000;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 0 0 0 0;
+  margin-top: -2rem;
+  width: 100%;
+}
+
+.victory-banner.hidden {
+  display: none; /* Caché par défaut */
+}
+
+.victory-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.player-highlight {
+  color: yellow;
+}
+
+.victory-text #final-moves,
+.victory-text #final-time {
+  color: yellow; /* Comme les compteurs */
+}
+
+.victory-link {
+  font-size: 1rem;
+  color: rgb(230, 230, 230);
+  text-decoration: underline;
+  margin-left: 0rem;
+  transition: color 0.3s;
+}
+
+.victory-link:hover {
+  color: orange;
+}
+
+/* Section plateau */
+.game-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: rgba(255, 251, 0, 0.2);
+  margin-top: -2rem;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Plateau de jeu */
+.game-board {
+  display: grid;
+  gap: 8px;
+  transition: all 0.4s ease;
+}
+
+/* Cartes */
+.card {
+  width: 110px;
+  aspect-ratio: 293 / 567;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  border: 3px solid yellow;
+}
+
+/* État carte retournée (pour plus tard) */
+.card-flipped {
+  background: #ffffff !important;
+}
+
+/* Responsive - Tablette */
+@media (max-width: 768px) {
+  .player-name {
+    font-size: 1.7rem;
+  }
+
+  .game-header {
+    gap: 1rem;
+  }
+
+  .game-item,
+  .btn-game {
+    min-width: 120px;
+    padding: 0.4rem 1.2rem;
+  }
+
+  .item-value {
+    font-size: 1.3rem;
+  }
+
+  .game-board {
+    gap: 6px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .player-name {
+    font-size: 1.4rem;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .game-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .game-col {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .game-item,
+  .btn-game {
+    padding: 0.5rem 1rem;
+  }
+
+  .item-value {
+    font-size: 1.2rem;
+  }
+
+  .item-label {
+    font-size: 0.75rem;
+  }
+
+  .game-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .game-board {
+    gap: 4px;
+  }
+
+  .card {
+    border-radius: 4px;
+  }
+}
