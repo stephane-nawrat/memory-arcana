@@ -20,6 +20,7 @@ $nom = isset($_GET['nom']) ? htmlspecialchars($_GET['nom']) : 'Anonyme';
 
             <form action="game.php" method="GET" class="config-form">
                 <input type="hidden" name="nom" value="<?php echo $nom; ?>">
+                <input type="hidden" name="new" value="1">
 
                 <!-- LIGNE 2 : Paires + Mode côte à côte -->
                 <div class="form-inline">
