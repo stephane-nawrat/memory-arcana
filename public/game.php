@@ -130,9 +130,9 @@ $cardColor = $modeColors[$mode] ?? '#000000';
         </div>
     </section>
 
-    <!-- JavaScript (à créer dans la prochaine étape) -->
-    <!-- <script src="assets/js/game.js"></script> -->
-    <!-- <script src="assets/js/timer.js"></script> -->
+
+    <script src="assets/js/game.js"></script>
+    <script src="assets/js/timer.js"></script>
 </body>
 
 </html>
